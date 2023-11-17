@@ -1,0 +1,25 @@
+apiVersion: kubeflow.org/v1alpha1
+kind: PodDefault
+metadata:
+  name: mlflow-server-access-minio
+  namespace: kubeflow-user-example-com
+spec:
+  desc: Allow access to Minio
+  env:
+  - name: AWS_ACCESS_KEY_ID
+    valueFrom:
+      secretKeyRef:
+        key: AWS_ACCESS_KEY_ID
+        name: mlpipeline-minio-artifact
+        optional: false
+  - name: AWS_SECRET_ACCESS_KEY
+    valueFrom:
+      secretKeyRef:
+        key: AWS_SECRET_ACCESS_KEY
+        name: mlpipeline-minio-artifact
+        optional: false
+  - name: MINIO_ENDPOINT_URL
+    value: http://mlflow-minio.kubeflow:9000
+  selector:
+    matchLabels:
+      access-minio: "true"
