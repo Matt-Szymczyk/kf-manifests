@@ -10,3 +10,7 @@ fs.inotify.max_user_watches=655360
 
 sudo sh -c 'echo "fs.inotify.max_user_instances=1280" >> /etc/sysctl.conf' && sudo sysctl -p   
 sudo sh -c 'echo "fs.inotify.max_user_watches=655360" >> /etc/sysctl.conf' && sudo sysctl -p
+
+addons needed for microk8s 
+dns
+metallb

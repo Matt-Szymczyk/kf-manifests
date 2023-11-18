@@ -88,3 +88,7 @@ resources:
 
 # Overlay for the user namespace
 - users
+# - networking
+
+patchesStrategicMerge:
+  - service.yaml
