@@ -12,7 +12,9 @@ sudo sh -c 'echo "fs.inotify.max_user_instances=1280" >> /etc/sysctl.conf' && su
 sudo sh -c 'echo "fs.inotify.max_user_watches=655360" >> /etc/sysctl.conf' && sudo sysctl -p
 
 sudo snap alias microk8s.kubectl kubectl
+sudo snap alias microk8s.helm helm
 
-addons needed for microk8s 
-dns
-metallb
+addons needed for microk8s   
+dns  
+hostpath-storage
+metrics-server
